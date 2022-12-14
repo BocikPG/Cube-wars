@@ -207,6 +207,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &507654039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7803984549464889431, guid: c8cdc80b4ce1b7649bb1d616b5934ae7, type: 3}
+  m_PrefabInstance: {fileID: 8249685009424969084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1145493062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -220,11 +225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2074190890999337662, guid: c8cdc80b4ce1b7649bb1d616b5934ae7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.819821
+      value: 9.28
       objectReference: {fileID: 0}
     - target: {fileID: 2074190890999337662, guid: c8cdc80b4ce1b7649bb1d616b5934ae7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5021127
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2074190890999337662, guid: c8cdc80b4ce1b7649bb1d616b5934ae7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -377,6 +382,8 @@ GameObject:
   - component: {fileID: 1434832331}
   - component: {fileID: 1434832330}
   - component: {fileID: 1434832329}
+  - component: {fileID: 1434832332}
+  - component: {fileID: 1434832333}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -394,7 +401,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -470,13 +477,48 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434832328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7722743, y: 0.12148777, z: 0}
+  m_LocalPosition: {x: 2.46, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1434832332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434832328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be28df21a5fc6f341b798285b7fb3749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  player: {fileID: 1661858076}
+--- !u!50 &1434832333
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434832328}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1661858071
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,9 +530,11 @@ GameObject:
   - component: {fileID: 1661858074}
   - component: {fileID: 1661858073}
   - component: {fileID: 1661858072}
+  - component: {fileID: 1661858075}
+  - component: {fileID: 1661858076}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +549,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -581,13 +625,46 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661858071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7722743, y: 0.12148777, z: 0}
+  m_LocalPosition: {x: 2.965, y: 0.264, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1661858075
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661858071}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 6
+--- !u!114 &1661858076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661858071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c257038bb592f45bd7721757d4cb37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2142839031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,11 +740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2074190890999337662, guid: c8cdc80b4ce1b7649bb1d616b5934ae7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.370179
+      value: -5.84
       objectReference: {fileID: 0}
     - target: {fileID: 2074190890999337662, guid: c8cdc80b4ce1b7649bb1d616b5934ae7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9621127
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 2074190890999337662, guid: c8cdc80b4ce1b7649bb1d616b5934ae7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -712,3 +789,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2074190890999337662, guid: c8cdc80b4ce1b7649bb1d616b5934ae7, type: 3}
   m_PrefabInstance: {fileID: 8249685009424969084}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &8249685009424969087
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507654039}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
