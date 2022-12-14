@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 			speed = 0;
 		}
 	}
-
+    //private methods
 	private void MoveTowards(Vector3 destination)
 	{
 		transform.position += speed * Time.deltaTime * destination;
