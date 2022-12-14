@@ -11,6 +11,12 @@ public class Enemy : MonoBehaviour
 	[SerializeField] private Player player;
 
 	//Unity methods
+	public void Start()
+	{
+        player = (Player)FindObjectOfType(typeof(Player));
+	}
+
+
 	public void Update()
 	{
 		Vector2 playerPos = player.transform.position;
@@ -25,7 +31,7 @@ public class Enemy : MonoBehaviour
 			speed = 0;
 		}
 	}
-    //private methods
+	//private methods
 	private void MoveTowards(Vector3 destination)
 	{
 		transform.position += speed * Time.deltaTime * destination;
