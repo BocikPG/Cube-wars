@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float speed = 1;
 
-    // Update is called once per frame
+    [SerializeField] private Player player;
+
+    
     void Update()
     {
-        
+        Vector2 playerPos = player.transform.position;
+        Vector2 myPos = transform.position;
+        MoveTowards(((playerPos-myPos).normalized)*-1);
+    }
+
+    private void MoveTowards(Vector3 destination)
+	{
+		transform.position += speed * Time.deltaTime * destination;
     }
 }
