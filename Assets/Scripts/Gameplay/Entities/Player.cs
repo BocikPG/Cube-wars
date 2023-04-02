@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 	//public/inspector
 
 	[SerializeField] private float speed;
+	[SerializeField] private Rigidbody2D rb;
 
 	//unity methods
 	void Update()
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
 
-		transform.position = new Vector2(transform.position.x + (h * speed), transform.position.y + (v * speed));
+		rb.velocity = new Vector2(h * speed, v * speed);
+		//rb.transform.position = new Vector2(transform.position.x + (h * speed), transform.position.y + (v * speed));
 	}
 }

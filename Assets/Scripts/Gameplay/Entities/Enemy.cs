@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
 
 	[SerializeField] private Player player;
 
+	[SerializeField] private Rigidbody2D rb;
+	[SerializeField] private Collider2D coll;
+
 	//Unity methods
 	public void Start()
 	{
@@ -28,12 +31,17 @@ public class Enemy : MonoBehaviour
 	{
 		if (other.CompareTag(Player.Tag))
 		{
-			speed = 0;
+			coll.enabled = false;
+			rb.Sleep();
+			rb.simulated = false;
 		}
 	}
 	//private methods
 	private void MoveTowards(Vector3 destination)
 	{
-		transform.position += speed * Time.deltaTime * destination;
+		//rb.AddForce(speed * Time.deltaTime * destination);
+		rb.velocity = speed * destination;
+		//rb.MovePosition(destination * Time.deltaTime);
+		//transform.position += speed * Time.deltaTime * destination;
 	}
 }
